@@ -12,7 +12,6 @@ class SegTree{
         SegTree(const vector<int> &v){
             N = (int) v.size();
             seg.resize(4*N,null_val);
-            a.resize(N,null_val);
             a = v;
             build(1, 0, N-1);
         }
