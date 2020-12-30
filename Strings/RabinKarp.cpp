@@ -1,12 +1,12 @@
-vector<int> rabin_karp(const string &pattern, const string &text){
+int rabin_karp(const string &pattern, const string &text){
 
-	vector<int> occurences;
+	int occurences = 0;
 
-	int P = patter.size();
+	int P = pattern.size();
 	int T = text.size();
 
-	int p = 31 // all lower cases english letter, for lower and upper use p = 53
-	int mod = 1e9+7
+	int p = 31; // all lower cases english letter, for lower and upper use p = 53
+	int mod = 1e9+7;
 
 	vector<long long> p_pow(max(P,T));
 
@@ -31,7 +31,7 @@ vector<int> rabin_karp(const string &pattern, const string &text){
 	for(int i=0;i+P-1<T;++i){
 		long long cur_hash = (hash_text[i+P] - hash_text[i] + mod) % mod;
 		if(cur_hash == hash_pattern * p_pow[i] % mod){
-			occurences.push_back(i);
+			occurences++;
 		}
 	}
 
