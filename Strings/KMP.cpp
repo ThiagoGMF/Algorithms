@@ -21,7 +21,7 @@ vector<int> matching(string &text, string &pattern) {
 	for(int i=0, j=0; i<n; ++i){
 		while(j > 0 && pattern[j] != text[i]) j = pi[j-1];
 		if(pattern[j] == text[i]) ++j;
-		if(j == pattern.size()) match.push_back(j-i+1);
+		if(j == pattern.size()) match.push_back(i-j+1);
 	}
 	
 	return match;
