@@ -1,8 +1,6 @@
 vector<int> build_suffix(const string &s) {
-
-	// Total time = O(n*log²(n)) where 'n' is size of string 's'
  
-	s += "$";
+	// Total time = O(n*log²(n)) where 'n' is size of string 's'
  
 	int n = (int) s.size();
  
@@ -43,5 +41,9 @@ vector<int> build_suffix(const string &s) {
 		}
 		++k;
 	}
+ 
+ 	p.erase(p.begin());
+ 
+ 	return p;
  
 }
