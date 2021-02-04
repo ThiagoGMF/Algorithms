@@ -42,8 +42,6 @@ vector<int> build_suffix(const string &s) {
 		++k;
 	}
  
- 	p.erase(p.begin());
- 
  	return p;
  
 }
@@ -72,8 +70,6 @@ vector<int> build_lcp(const vector<int> &sa, const string &s){
 		k = max(k - 1, 0);
 
 	}
-
-	lcp.erase(lcp.begin());
 
 	return lcp;
 
