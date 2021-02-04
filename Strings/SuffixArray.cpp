@@ -47,3 +47,34 @@ vector<int> build_suffix(const string &s) {
  	return p;
  
 }
+
+vector<int> build_lcp(const vector<int> &sa, const string &s){
+
+	int n = sa.size();
+	vector<int> inv(n);
+
+	for(int i = 0; i < n; i++) {
+		inv[sa[i]] = i;
+	}
+
+	vector<int> lcp(n, 0);
+
+	for(int i = 0, k = 0; i < n; i++){
+
+		int pi = inv[i];
+
+		int j = sa[pi-1];
+
+		while(i + k < n && j + k < n && s[i + k] == s[j + k]) ++k;
+
+		lcp[pi] = k;
+
+		k = max(k - 1, 0);
+
+	}
+
+	lcp.erase(lcp.begin());
+
+	return lcp;
+
+}
