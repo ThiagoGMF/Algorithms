@@ -19,8 +19,7 @@ const int mod = 1e9+7;
  
 using namespace std;
 
-void solve(){
-	
+void solve(){	
 }
 
 int32_t main(){
